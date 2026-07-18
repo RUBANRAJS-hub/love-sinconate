@@ -21,36 +21,78 @@ export const LoveQuiz: React.FC = () => {
   const hasAnswered = selectedOption !== null;
 
   const questions: Question[] = [
-    {
-      id: 1,
-      question: "Where did we first meet in person?",
-      options: ["Cozy Coffee Shop", "The Scenic Park Walkway", "Under the City Lights", "Near the Library"],
-      correctAnswer: 1, // "Scenic Park Walkway"
-      explanation: "We met under the beautiful trees in the park walkway, a moment where the wind seemed to stand still for us."
-    },
-    {
-      id: 2,
-      question: "What is my absolute favorite thing about you?",
-      options: ["Your cute laugh", "Your beautiful sparkling eyes", "Your warm, kind heart", "All of the above ❤️"],
-      correctAnswer: 3,
-      explanation: "Every part of you is perfect, Shobi. I couldn't choose just one even if I tried!"
-    },
-    {
-      id: 3,
-      question: "What was the date of our anniversary?",
-      options: ["October 18", "December 14", "April 5", "November 2"],
-      correctAnswer: 0,
-      explanation: "October 18 is the day our stars aligned and my life changed forever."
-    },
-    {
-      id: 4,
-      question: "How long do I promise to love and cherish you?",
-      options: ["A few years", "As long as we are happy", "Until the stars stop shining 💫", "Forever and a day more ❤️"],
-      correctAnswer: 3,
-      explanation: "My love for you stretches beyond time and space. It is eternal."
-    }
-  ];
 
+  {
+    id: 1,
+    question: "Where did we first meet in outing place?",
+    options: ["Cozy Coffee Shop", "Park Walkway", "Under the City Lights", "Near the Library"],
+    correctAnswer: 2,
+    explanation: "We met under the beautiful trees in the park walkway, a moment where the wind seemed to stand still for us."
+  },
+  {
+    id: 2,
+    question: "What is my absolute favorite thing about you?",
+    options: ["Your cute laugh", "Your beautiful sparkling eyes", "Your warm, kind heart", "All of the above ❤️"],
+    correctAnswer: 3,
+    explanation: "Every part of you is perfect, Shobi. I couldn't choose just one even if I tried!"
+  },
+  {
+    id: 3,
+    question: "What was the date of our anniversary?",
+    options: ["October 18", "December 14", "April 5", "June 21"],
+    correctAnswer: 3,
+    explanation: "June 21 is the day our stars aligned and my life changed forever."
+  },
+  {
+    id: 4,
+    question: "How long do I promise to love and cherish you?",
+    options: ["A few years", "As long as we are happy", "Until the stars stop shining 💫", "Forever and a day more ❤️"],
+    correctAnswer: 3,
+    explanation: "My love for you stretches beyond time and space. It is eternal."
+  },
+  {
+    id: 5,
+    question: "What nickname do I love calling you?",
+    options: ["ammu 👑", "papa ❤️", "Shobi 🥰", "pondati 😇"],
+    correctAnswer: 1,
+    explanation: "Calling you 'papa' always makes my heart smile."
+  },
+  {
+    id: 6,
+    question: "What do I miss the most when you're away?",
+    options: ["Your messages", "Your smile", "Your voice", "Everything about you ❤️"],
+    correctAnswer: 3,
+    explanation: "Distance only reminds me how much every little thing about you means to me."
+  },
+  {
+    id: 7,
+    question: "What is our dream destination together?",
+    options: ["Maldives 🏝️", "kodaikanal 🗼", "ooty ❄️", "Anywhere as long as we're together ❤️"],
+    correctAnswer: 3,
+    explanation: "Every place becomes magical when I'm with you."
+  },
+  {
+    id: 8,
+    question: "What would I do if you were feeling sad?",
+    options: ["Give you space", "Buy you chocolates 🍫", "Hold your hand and make you smile ❤️", "Send funny memes 😂"],
+    correctAnswer: 2,
+    explanation: "Your happiness is my priority, and I'll always stay beside you."
+  },
+  {
+    id: 9,
+    question: "Who owns my heart forever?",
+    options: ["Nobody", "My family", "Shobi ❤️", "It's a secret 🤫"],
+    correctAnswer: 2,
+    explanation: "My heart has only one owner, and that's you."
+  },
+  {
+    id: 10,
+    question: "What happens after you answer all the questions correctly?",
+    options: ["Nothing", "You unlock a surprise ❤️", "You get unlimited hugs 🤗", "Both B & C 💕"],
+    correctAnswer: 3,
+    explanation: "Congratulations! You've unlocked my heart, a special love message, and unlimited virtual hugs forever!"
+  }
+];
   const handleOptionSelect = (optionIdx: number) => {
     if (selectedOption !== null) return; // already answered
     setSelectedOption(optionIdx);

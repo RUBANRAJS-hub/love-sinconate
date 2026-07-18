@@ -11,7 +11,6 @@ import LoadingScreen from './pages/LoadingScreen';
 import Home from './pages/Home';
 import LoveLetter from './pages/LoveLetter';
 import Timeline from './pages/Timeline';
-import Gallery from './pages/Gallery';
 import MusicPlayer from './pages/MusicPlayer';
 import Reasons from './pages/Reasons';
 import LoveQuiz from './pages/LoveQuiz';
@@ -52,7 +51,6 @@ const AppContent: React.FC = () => {
             <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             <Route path="/letter" element={<ProtectedRoute><LoveLetter /></ProtectedRoute>} />
             <Route path="/timeline" element={<ProtectedRoute><Timeline /></ProtectedRoute>} />
-            <Route path="/gallery" element={<ProtectedRoute><Gallery /></ProtectedRoute>} />
             <Route path="/music" element={<ProtectedRoute><MusicPlayer /></ProtectedRoute>} />
             <Route path="/reasons" element={<ProtectedRoute><Reasons /></ProtectedRoute>} />
             <Route path="/quiz" element={<ProtectedRoute><LoveQuiz /></ProtectedRoute>} />
