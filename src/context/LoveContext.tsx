@@ -46,12 +46,12 @@ const playlist: Song[] = [
   {
     title: 'Yeya En Kottikkaaraa',
     artist: 'Anirudh Ravichander (Sethupathi)',
-    url: '/songs/yeya.mp3',
+    url: '/songs/yeya.m4a',
   },
   {
     title: 'Onakkaaga Poranthaenae',
     artist: 'Justin Prabhakaran (Pannaiyaarum Padminiyum)',
-    url: '/songs/onakkaaga.mp3',
+    url: '/songs/onakkaaga.m4a',
   }
 ];
 
