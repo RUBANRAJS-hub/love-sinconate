@@ -61,12 +61,12 @@ const playlist: Song[] = [
   {
     title: 'Yeya En Kottikkaaraa',
     artist: 'Anirudh Ravichander (Sethupathi)',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+    url: 'https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-theme-2746.mp3',
   },
   {
     title: 'Onakkaaga Poranthaenae',
     artist: 'Justin Prabhakaran (Pannaiyaarum Padminiyum)',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
+    url: 'https://assets.mixkit.co/music/preview/mixkit-love-guitar-theme-2735.mp3',
   },
   {
     title: 'Romantic Sunset (Violin & Piano)',
@@ -93,40 +93,47 @@ export const LoveProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const ambientAudioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Initialize main playlist audio
+  // Initialize main playlist audio object once
   useEffect(() => {
-    audioRef.current = new Audio(playlist[currentSongIndex].url);
-    audioRef.current.loop = false;
-    
+    const audio = new Audio();
+    audio.loop = false;
+    audioRef.current = audio;
+
     const handleEnded = () => {
       nextSong();
     };
 
-    audioRef.current.addEventListener('ended', handleEnded);
+    audio.addEventListener('ended', handleEnded);
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.removeEventListener('ended', handleEnded);
-      }
+      audio.pause();
+      audio.removeEventListener('ended', handleEnded);
     };
-  }, [currentSongIndex]);
+  }, []);
 
-  // Handle Play/Pause and Mute for Main Audio
+  // Synchronize Audio source and state
   useEffect(() => {
-    if (!audioRef.current) return;
-    
-    audioRef.current.muted = isMuted;
-    
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // Check if source changed
+    const currentUrl = playlist[currentSongIndex].url;
+    if (audio.src !== currentUrl) {
+      audio.src = currentUrl;
+      audio.load();
+    }
+
+    audio.muted = isMuted;
+
     if (isPlaying && loveUnlocked) {
-      audioRef.current.play().catch(err => {
+      audio.play().catch(err => {
         console.log("Autoplay blocked by browser. Awaiting user interaction.", err);
         setIsPlaying(false);
       });
     } else {
-      audioRef.current.pause();
+      audio.pause();
     }
-  }, [isPlaying, isMuted, currentSongIndex, loveUnlocked]);
+  }, [currentSongIndex, isPlaying, isMuted, loveUnlocked]);
 
   // Handle Ambient Sounds
   useEffect(() => {
