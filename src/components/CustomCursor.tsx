@@ -22,10 +22,10 @@ export const CustomCursor: React.FC = () => {
   const mouseRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Check if device supports touch
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) {
-      return; // Do not show custom cursor on touch devices
+    // Disable custom cursor on mobile and tablet viewports (under 1024px)
+    const isMobileOrTablet = window.innerWidth < 1024;
+    if (isMobileOrTablet) {
+      return; 
     }
 
     setIsVisible(true);
