@@ -46,12 +46,12 @@ const playlist: Song[] = [
   {
     title: 'Yeya En Kottikkaaraa',
     artist: 'Anirudh Ravichander (Sethupathi)',
-    url: 'https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-theme-2746.mp3',
+    url: '/songs/yeya.mp3',
   },
   {
     title: 'Onakkaaga Poranthaenae',
     artist: 'Justin Prabhakaran (Pannaiyaarum Padminiyum)',
-    url: 'https://assets.mixkit.co/music/preview/mixkit-love-guitar-theme-2735.mp3',
+    url: '/songs/onakkaaga.mp3',
   }
 ];
 
