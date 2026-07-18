@@ -59,6 +59,16 @@ const playlist: Song[] = [
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
   },
   {
+    title: 'Yeya En Kottikkaaraa',
+    artist: 'Anirudh Ravichander (Sethupathi)',
+    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+  },
+  {
+    title: 'Onakkaaga Poranthaenae',
+    artist: 'Justin Prabhakaran (Pannaiyaarum Padminiyum)',
+    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
+  },
+  {
     title: 'Romantic Sunset (Violin & Piano)',
     artist: 'Serenade Ensemble',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
