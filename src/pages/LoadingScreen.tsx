@@ -70,6 +70,29 @@ export const LoadingScreen: React.FC = () => {
     return () => clearInterval(interval);
   }, [isPressing, percent]);
 
+  // Listen for Enter key press on laptop/keyboard
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' && percent >= 100 && !isUnlocked) {
+        setIsPressing(true);
+      }
+    };
+
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        setIsPressing(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, [percent, isUnlocked]);
+
   const triggerUnlock = () => {
     setIsUnlocked(true);
     confetti({
@@ -157,8 +180,8 @@ export const LoadingScreen: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col items-center"
               >
-                <p className="text-white/70 text-xs mb-8 max-w-[250px] leading-relaxed">
-                  Hold your finger on the sensor below to verify your identity.
+                <p className="text-white/70 text-xs mb-8 max-w-[270px] leading-relaxed">
+                  Hold your finger on the sensor below or <strong>press & hold the Enter key</strong> on your keyboard to verify your identity.
                 </p>
 
                 {/* Fingerprint Button Container */}
@@ -219,7 +242,7 @@ export const LoadingScreen: React.FC = () => {
                 </div>
 
                 <span className="text-[10px] text-white/40 uppercase tracking-widest font-semibold mt-4">
-                  {isPressing ? 'Analyzing Biometrics...' : 'Press and hold sensor'}
+                  {isPressing ? 'Analyzing Biometrics...' : 'Press & hold sensor / Enter key'}
                 </span>
               </motion.div>
             )}
