@@ -30,7 +30,7 @@ export const LoadingScreen: React.FC = () => {
         textIndex++;
         setLoadingText(texts[textIndex]);
       }
-    }, 1200);
+    }, 300);
 
     const percentInterval = setInterval(() => {
       setPercent((prev) => {
@@ -38,9 +38,9 @@ export const LoadingScreen: React.FC = () => {
           clearInterval(percentInterval);
           return 100;
         }
-        return prev + 1;
+        return prev + 3; // faster increment
       });
-    }, 50);
+    }, 20);
 
     return () => {
       clearInterval(textInterval);
@@ -60,9 +60,9 @@ export const LoadingScreen: React.FC = () => {
             triggerUnlock();
             return 100;
           }
-          return prev + 5; // Scan takes 1 second
+          return prev + 10; // Scan takes only 0.3 seconds
         });
-      }, 50);
+      }, 30);
     } else {
       setScanProgress(0);
     }
