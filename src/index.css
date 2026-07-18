@@ -105,13 +105,7 @@ body {
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
-/* Hide cursor on desktop where custom cursor is active */
-@media (min-width: 1024px) {
-  .custom-cursor-active,
-  .custom-cursor-active * {
-    cursor: none !important;
-  }
-}
+
 
 /* Additional weather styles */
 .snowflake, .sakura-petal {
