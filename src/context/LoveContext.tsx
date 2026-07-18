@@ -44,21 +44,6 @@ const LoveContext = createContext<LoveContextType | undefined>(undefined);
 
 const playlist: Song[] = [
   {
-    title: 'A Thousand Years (Instrumental Piano)',
-    artist: 'Chamber Orchestra',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-  },
-  {
-    title: 'Perfect (Acoustic Guitar)',
-    artist: 'Sweet Strings',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-  },
-  {
-    title: 'Can\'t Help Falling in Love (Celeste)',
-    artist: 'Dreamy Music Box',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-  },
-  {
     title: 'Yeya En Kottikkaaraa',
     artist: 'Anirudh Ravichander (Sethupathi)',
     url: 'https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-theme-2746.mp3',
@@ -67,11 +52,6 @@ const playlist: Song[] = [
     title: 'Onakkaaga Poranthaenae',
     artist: 'Justin Prabhakaran (Pannaiyaarum Padminiyum)',
     url: 'https://assets.mixkit.co/music/preview/mixkit-love-guitar-theme-2735.mp3',
-  },
-  {
-    title: 'Romantic Sunset (Violin & Piano)',
-    artist: 'Serenade Ensemble',
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
   }
 ];
 
